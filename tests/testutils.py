@@ -9,3 +9,4 @@ class Testutils(unittest.TestCase):
 
     def test_apply_discount(self):
         self.assertEqual(self.item.apply_discount(), None)
+

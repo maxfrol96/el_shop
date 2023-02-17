@@ -21,3 +21,5 @@ class Item():
     def __repr__(self):
         return f'(Название товара: {self.name}, Цена за штуку: {self.price}, Количество: {self.count})'
 
+item = Item("Ноутбук", 20000, 5)
+print(item)
