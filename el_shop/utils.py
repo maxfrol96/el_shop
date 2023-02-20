@@ -52,16 +52,3 @@ class Item:
         return f'(Название товара: {self.__name}, Цена за штуку: {self.price}, Количество: {self.count})'
 
 
-# item = Item("Ноутбук", 20000, 5)
-# print(item)
-# item.name = 'ggg'
-# print(item.name)
-# print(item)
-# item.name = 'ggggggggggggg'
-# print(item)
-Item.instantiate_from_csv()
-print(Item.all)
-print(len(Item.all))
-# print(Item.is_integer(5))
-# print(Item.is_integer(5.0))
-# print(Item.is_integer(5.5))
