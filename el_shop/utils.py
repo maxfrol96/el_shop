@@ -49,6 +49,9 @@ class Item:
             return False
 
     def __repr__(self):
-        return f'(Название товара: {self.__name}, Цена за штуку: {self.price}, Количество: {self.count})'
+        return f'{self.__class__.__name__}({self.__name}, {self.price}, {self.count})'
+
+    def __str__(self):
+        return f'{self.__name}'
 
 
