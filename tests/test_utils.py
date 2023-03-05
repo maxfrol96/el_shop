@@ -1,4 +1,4 @@
-from el_shop.utils import Item
+from el_shop.utils import Item, Phone
 
 
 def test_calculate_total_price():
@@ -7,6 +7,12 @@ def test_calculate_total_price():
 
 
 def test_is_integer():
-    assert Item.is_integer(5) == True
-    assert Item.is_integer(5.0) == True
-    assert Item.is_integer(5.5) == False
+    assert Item.is_integer(5) is True
+    assert Item.is_integer(5.0) is True
+    assert Item.is_integer(5.5) is False
+
+
+def test_add():
+    phone1 = Phone("iPhone 14", 120_000, 5, 2)
+    item = Item("iPhone 14", 120_000, 5)
+    assert phone1 + item == 10
