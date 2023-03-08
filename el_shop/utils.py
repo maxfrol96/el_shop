@@ -83,6 +83,24 @@ class Phone(Item):
             return self.count + other.count
 
 
+class MixinKeyBoard:
+
+    def __init__(self, name, price, count):
+        super().__init__(name, price, count)
+        self.__language = 'EN'
+
+    @property
+    def language(self):
+        return self.__language
+
+    def change_lang(self):
+        if self.__language == 'EN':
+            self.__language = 'RU'
+        else:
+            self.__language = 'EN'
+        return self.__language
 
 
+class KeyBoard(MixinKeyBoard, Item):
+    pass
 
