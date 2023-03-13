@@ -35,11 +35,6 @@ class Item:
         try:
             with open('items.csv', 'r', encoding='windows-1251') as f:
                 reader = csv.reader(f)
-        except:
-            raise FileNotFoundError('Отсутствует файл item.csv')
-        try:
-            with open('items.csv', 'r', encoding='windows-1251') as f:
-                reader = csv.reader(f)
                 rows = []
                 for row in reader:
                     rows.append(row)
@@ -50,8 +45,11 @@ class Item:
                     if Item.is_integer(float(a[2])):
                         a[2] = int(a[2])
                     cls(a[0], a[1], a[2])
+        except FileNotFoundError:
+            print('Отсутствует файл item.csv')
         except:
             raise InstantiateCSVError('Файл items.csv поврежден')
+
 
     @staticmethod
     def is_integer(num):
